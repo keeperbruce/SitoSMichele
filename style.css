@@ -1,0 +1,170 @@
+/* 1. VARIABILI E RESET */
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --accent-angelo: #00ddff;
+    --accent-diavolo: #ff4d4d;
+    --panel-bg: #252525;
+    --genius-yellow: #ffff64;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all var(--transition-speed) ease;
+}
+
+/* 2. LAYOUT */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* 3. STRUTTURA DEL DRAMMA (Testo) */
+.speech {
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.character {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* Colore differenziato per i nomi */
+.angelo .character { color: var(--accent-angelo); }
+.diavolo .character { color: var(--accent-diavolo); }
+
+.prosa {
+    margin: 0;
+    text-align: justify;
+    padding-left: 10px;
+}
+
+.versi {
+    font-style: italic;
+    padding-left: 30px; 
+    line-height: 1.8;
+    border-left: 2px solid var(--accent-angelo); /* Barra laterale solo per l'angelo */
+}
+
+/* 4. ANNOTAZIONI (Stile Genius) */
+.annotated {
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px dashed #666; /* Stato neutro */
+}
+
+/* Colore sottolineatura basato sull'ID */
+.annotated[data-id^="a"] { border-color: var(--accent-angelo); }
+.annotated[data-id^="d"] { border-color: var(--accent-diavolo); }
+
+/* Rimuovi il vecchio .annotated:hover e usa questo */
+.annotated:hover, 
+.annotated.hover-group {
+    background-color: rgba(255, 255, 100, 0.4); /* Giallo semitrasparente */
+    color: #fff; /* Mantieni il testo chiaro finché non diventa .active */
+}
+
+/* Lo stato active rimane prioritario e più intenso */
+.annotated.active {
+    background-color: var(--genius-yellow) !important;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+/* 5. PANNELLO LATERALE */
+aside {
+    width: 350px;
+    background-color: var(--panel-bg);
+    border-left: 1px solid #333;
+    padding: 25px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+
+aside.hidden { display: none; }
+
+#close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#close-btn:hover { color: var(--accent-diavolo); }
+
+/* Componenti interni al pannello */
+#selected-quote-container {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent-angelo);
+}
+
+.quote-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+    display: block;
+}
+
+#selected-text-preview {
+    margin: 5px 0;
+    font-style: italic;
+    font-size: 1rem;
+    color: #fff;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+/* 6. SCROLLBAR & ACCESSORI */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+/* 7. RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    main { padding: 20px; }
+    aside {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        height: 30%;
+        padding: 20px 15px 20px 20px; /* Ordine: Top, Right, Bottom, Left */
+        box-sizing: border-box;
+        border-top: 2px solid #444;
+        z-index: 1000;
+    }
+}
