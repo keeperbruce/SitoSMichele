@@ -1,7 +1,14 @@
 /* --- 1. CONFIGURAZIONE DATI --- */
 const explanations = {
-    "1": "Parafrasi: con grande sfarzo oggi si celebra una gran festa in onore di San Michele.<br>Analisi: viene usata la figura retorica dell'iperbato.",
-    "2": "Parafrasi: umiliando/umiliato dell'esiliato, serpe infernale.<br>Commento: si festeggia dato che il diavolo è stato battuto.",
+    "prima-s-a1": "Parafrasi: con grande sfarzo oggi si celebra una gran festa in onore di San Michele.<br>Analisi: viene usata la figura retorica dell'iperbato.",
+    "prima-s-a2": "Parafrasi: umiliando/umiliato dell'esiliato, serpe infernale.<br>Commento: si festeggia dato che il diavolo è stato battuto.",
+    "prima-s-d1": "Commento: Riprende sarcasticamente i versi del suo avversario.",
+    "prima-s-d2": "Commento: Non accetta la sconfitta, rifiutandosi di sottomettersi (non domo), e sfida aprtamente l'avversario, consapevole di tale sfida (cimento).",
+    "seconda-s-d1": "Commento:<br> Lucifero non teme le vuote minacce dell'Angelo: orgoglio, sete di vendetta e il ricordo della sua ribellione mantengono vivo in lui il desiderio di conquista dell'Empireo.",
+    "terza-s-d1": "Parafrasi: Non me ne andrò se non quando sarò sconfitto.",
+    "terza-s-d2": "Commento: Piuttosto che andarsene, preferisce restare lì, provocando il suo avversario.",
+    "Avernus": "Riferimento al lago d'Averno che nell'epica greca rappresenta un punto di ingresso per gli inferi.",
+    "ottava-s-a1": "Commento:<br> San Michele non teme la sfida: affronterà Lucifero da solo.<br>Oppure: San Michele avvisa Lucifero che da ora in poi sguinerà la spada solo contro di lui e la sua armata.",
     // Aggiungi qui tutte le tue annotazioni
 };
 
